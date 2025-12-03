@@ -13,8 +13,8 @@ if [[ ! -f "main.go" ]]; then
     exit 2
 fi
 
-# 下载依赖
-go mod download
+# 整理依赖并生成 go.sum (替换 go mod download)
+go mod tidy
 
 # 版本号
 VERSION=$1
